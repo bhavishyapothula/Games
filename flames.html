@@ -1,0 +1,45 @@
+<html>
+<head>
+<script>
+var name1=window.prompt("enter name of first person");
+var name2=window.prompt("enter name of second person");
+var str="flames";
+var x=name1,y=name2;
+var count=0,n;
+for(var i=0;i<name1.length;i++)
+{
+for(var j=0;j<name2.length;j++)
+{
+if(name1.charAt(i)==name2.charAt(j))
+{
+name1=name1.slice(0,i)+"_"+name1.slice(i+1,name1.length);
+name2=name2.slice(0,j)+"_"+name2.slice(j+1,name2.length);
+}
+}
+}
+name1=name1.replace(/_/g,"");
+name2=name2.replace(/_/g,"");
+count=name1.length+name2.length;
+count=count-1;
+while((str.length)!=1)
+{
+n=count%(str.length);
+str=str.slice(n+1,str.length)+str.slice(0,n);
+}
+if(str=="f")
+document.writeln("The relation between "+x+" and "+y+" is "+"FRIENDS");
+if(str=="l")
+document.writeln("The relation between "+x+" and "+y+" is "+"LOVERS");
+if(str=="a")
+document.writeln("The relation between "+x+" and "+y+" is "+"ANCESTORS");
+if(str=="m")
+document.writeln("The relation between "+x+" and "+y+" is "+"MARRIAGE");
+if(str=="e")
+document.writeln("The relation between "+x+" and "+y+" is "+"ENEMIES");
+if(str=="s")
+document.writeln("The relation between "+x+" and "+y+" is "+"SISTERS");
+
+</script>
+</head>
+<body></body>
+</html>
